@@ -1,0 +1,1 @@
+var fxApp = angular.module('fxApp', []);

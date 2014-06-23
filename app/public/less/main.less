@@ -1,0 +1,236 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+@brand-primary: #DF691A;
+@default-color: #2B3E50;
+@shadow-color: rgba(50, 50, 50, 0.7);
+
+@ForexTableWidth: 55em;
+@ForexTableHeight: 50em;
+
+@ForexTableControlsWidth: 40em;
+@ForexTableControlsHeight: 5em;
+
+@ForexTableItemHeight: 5.5em;
+
+* {
+	font-family: 'Open sans', sans-serif;
+	font-size: 10px;
+}
+body, html {
+	width: 100%;
+	height: 100%;
+}
+
+.Header {
+	position: relative;
+	background-color: @brand-primary;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 3.5em 0;
+	border-bottom: 0.2em solid @brand-primary;
+
+	z-index: 1;
+
+	-webkit-box-shadow: 0 8px 6px 0 @shadow-color;
+	   -moz-box-shadow: 0 8px 6px 0 @shadow-color;
+	        box-shadow: 0 8px 6px 0 @shadow-color;
+
+	h2 {
+		margin: 0;
+		font-size: 5em;
+
+		-webkit-animation: FadeIn 1s linear;
+		   -moz-animation: FadeIn 1s linear;
+		    -ms-animation: FadeIn 1s linear;
+		     -o-animation: FadeIn 1s linear;
+		        animation: FadeIn 1s linear;
+	}
+}
+.Header-urlEnding {
+	font-size: inherit;
+	color: @default-color;
+}
+
+.ForexTable {
+	position: absolute;
+	
+	width: @ForexTableWidth;
+	top: 30%;
+	left: 50%;
+	margin-left: -@ForexTableWidth/2;
+	-webkit-animation: DropDown 1s forwards ease-out;
+	   -moz-animation: DropDown 1s forwards ease-out;
+	    -ms-animation: DropDown 1s forwards ease-out;
+	     -o-animation: DropDown 1s forwards ease-out;
+	        animation: DropDown 1s forwards ease-out;
+
+
+	.ForexTable-Item {
+
+		.ForexTable-Item-Fx,
+		.ForexTable-Item-Rate,
+		.ForexTable-Item-Change {
+			p {
+				padding: 0.2em 0.2em;
+				font-size: 2em;
+				margin: 0;
+			}
+		}
+			
+		.ForexTable-Item-Input {
+			height: @ForexTableItemHeight;
+			padding: 0;
+			margin-left: 7em;
+			input {
+				-webkit-appearance: none;
+				   -moz-appearance: none;
+				    -ms-appearance: none;
+				     -o-appearance: none;
+				     		appearance: none;
+				width: 100%;
+				max-width: 100%;
+				height: 100%;
+				max-height: 100%;
+				font-size: 4em;
+				text-align: center;
+        border: 0;
+        border-radius: 0;
+        color: @brand-primary;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+
+        &:focus {
+        	outline: none;
+        }
+			}
+		}
+
+		.ForexTable-Item-Fx {
+			width: 7em;
+			padding: 1em;
+			background-color: @brand-primary;
+		}
+
+		.ForexTable-Item-Change {
+			width: 14em;
+			padding: 1em;
+			background-color: darken(@default-color, 10%);
+		}
+		.ForexTable-Item-Rate {
+			padding: 1em;
+			margin-right: 9em;
+			margin-left: 7em;
+		}
+		.ForexTable-Item-More {
+			span {
+				font-size: 2em;
+				color: #fff;
+			}
+			padding: 1.5em;
+			background-color: @brand-primary;
+
+			&:hover {
+				cursor: pointer;
+				background-color: darken(@brand-primary, 6%);
+			}
+		}
+	padding: 0;
+	margin-bottom: 0.5em;
+	border: none;
+	}
+}
+
+.ForexTable-Controls {
+	position: absolute;
+	width: @ForexTableControlsWidth;
+	margin-left: -@ForexTableControlsWidth/2;
+	top: 20%;
+	left: 50%;
+	opacity: 0;
+
+	border: 0.1em solid rgba(105, 105, 105, 0.6);
+
+	-webkit-animation: Fromleft 1s 0.3s forwards ease-out;
+	   -moz-animation: Fromleft 1s 0.3s forwards ease-out;
+	    -ms-animation: Fromleft 1s 0.3s forwards ease-out;
+	     -o-animation: Fromleft 1s 0.3s forwards ease-out;
+	        animation: Fromleft 1s 0.3s forwards ease-out;
+}
+
+.Controls-Button {
+	background: none;
+	width: @ForexTableControlsWidth/2 - 6.78em;
+	display: inline !important;
+	margin: 0 !important;
+	padding: 1em 1em !important;
+	border: none;
+	outline: none !important;
+
+	-webkit-box-shadow: none !important;
+	   -moz-box-shadow: none !important;
+	        box-shadow: none !important;
+
+	&:hover, &:active, .active, &:focus {
+		background: none !important;
+
+	}
+}
+
+.ForexTable-Controls-Selected {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+	width: @ForexTableControlsWidth/2;
+	height: @ForexTableControlsHeight + 0.1em;
+	background-color: rgba(105, 105, 105, 0.3);
+
+	-webkit-transition: all 0.3s ease-out;
+}
+
+.Up {
+	color: rgb(92, 184, 92);
+}
+
+.Down {
+	color: rgb(217, 83, 79);
+}
+
+.ForexTable-Item-Animate {
+	-webkit-transition: all 1s ease-out;
+     -moz-transition: all 1s ease-out;
+      -ms-transition: all 1s ease-out;
+       -o-transition: all 1s ease-out;
+          transition: all 1s ease-out;
+}
+
+
+
+@-webkit-keyframes FadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-webkit-keyframes DropDown {
+	from { 
+		-webkit-transform: translate3d(0, -90em, 0); 
+		opacity: 0;
+	}
+	to {
+	  -webkit-transform: translate3d(0, 0, 0); 
+	  opacity: 1;
+	}
+}
+
+
+@-webkit-keyframes Fromleft {
+	from { 
+		-webkit-transform: translate3d(-@ForexTableControlsWidth*2, 0, 0); 
+		opacity: 0;
+	}
+	to { 
+		-webkit-transform: translate3d(0, 0, 0); 
+		opacity: 1;
+	}
+}

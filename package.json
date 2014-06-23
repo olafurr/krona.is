@@ -1,0 +1,40 @@
+{
+  "name": "krona",
+  "version": "0.0.0",
+  "description": "Íslensk síða fyrir gengi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "gulp": "~3.6.0",
+    "gulp-concat": "~2.2.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-watch": "~0.5.3",
+    "gulp-less": "~1.2.3",
+    "gulp-cssmin": "~0.1.4",
+    "gulp-connect": "~1.0.9",
+    "gulp-inject": "~0.4.1",
+    "gulp-jshint": "~1.5.3",
+    "gulp-rename": "~1.2.0",
+    "express": "~4.0.0",
+    "gulp-nodemon": "~1.0.2",
+    "gulp-livereload": "~1.2.0",
+    "gulp-ignore": "~1.0.0"
+  },
+  "keywords": [
+    "gengi",
+    "forex"
+  ],
+  "author": "Ólafur Ragnar Garðarsson",
+  "license": "ISC",
+  "dependencies": {
+    "jade": "~1.3.1",
+    "express": "~4.0.0"
+  },
+  "subdomain": "krona",
+  "engines": {
+    "node": "0.10.x"
+  }
+}

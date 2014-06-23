@@ -1,0 +1,62 @@
+doctype html
+html(ng-app='fxApp')
+	head
+		title Króna.is
+		//- meta (http-equiv="cleartype" content="on")
+		//- meta (name="MobileOptimized" content="width")
+		//- meta (name="viewport" content="width=device-width, initial-scale=1")
+		//- meta (name="HandheldFriendly" content="true")
+	body(ng-controller='MainViewCtrl')
+		.Header.col-md-12
+			h2.text-center
+				|	Króna
+				span.Header-urlEnding
+					| .is
+		.ForexTable-Controls
+			button.btn.btn-primary.Controls-Button.Rates.Selected(ng-click='switchTable()')
+				i.fa.fa-stack-exchange.fa-lg&nbsp&nbsp
+				| Gengi
+			button.btn.btn-primary.Controls-Button.Calculator(ng-click='switchTable()')
+				i.fa.fa-plus-square-o.fa-lg&nbsp&nbsp
+				| Reiknivél
+			.ForexTable-Controls-Selected
+		.ForexTable
+			ul.list-group
+				li.list-group-item.ForexTable-Item.ForexTable-Item-Animate(ng-repeat='fx in currentFxSelection')
+					.ForexTable-Item-Fx.pull-left
+						p
+							| {{fx.shortName}}
+					.ForexTable-Item-Change.pull-right(ng-show='showRates')
+						p.Up(ng-if='fx.changeCur >= 0')
+							i.fa.fa-arrow-up.fa-lg
+							| &nbsp&nbsp {{fx.changeCur}}
+						p.Down(ng-if='fx.changeCur < 0')
+							i.fa.fa-arrow-down.fa-lg
+							| &nbsp&nbsp {{fx.changeCur.toFixed(3)}}
+					.ForexTable-Item-Rate.center-block(ng-show='showRates')
+						p.text-center
+							| {{fx.value.toFixed(2)}} ISK
+					.ForexTable-Item-Input.center-block(ng-show='!showRates')
+						input(type='text', pattern='[0-9]*', ng-model='rateConversions[$index]')
+			a.list-group-item.ForexTable-Item(href, ng-click='showMore()')
+				.ForexTable-Item-More.text-center
+					span(ng-if="!allData")
+						i.fa.fa-plus.fa-lg
+						|	Sýna fleiri
+					span(ng-if="allData")
+						i.fa.fa-minus.fa-lg
+						|	Sýna færri
+
+
+
+
+link(rel='stylesheet', href='css/bootstrap.min.css')
+link(rel='stylesheet', href='css/main.min.css')
+link(rel='stylesheet', href='fontawesome/css/font-awesome.min.css')
+script(src='jquery/dist/jquery.min.js')
+script(src='angular/angular.min.js')
+script(src='js/app.min.js')
+script(src='js/controllers/MainViewCtrl.min.js')
+script(src='js/services/fxRepo.min.js')
+script(src='js/main.min.js')
+

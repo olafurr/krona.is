@@ -1,0 +1,197 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+* {
+  font-family: 'Open sans', sans-serif;
+  font-size: 10px;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+.Header {
+  position: relative;
+  background-color: #df691a;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3.5em 0;
+  border-bottom: 0.2em solid #df691a;
+  z-index: 1;
+  -webkit-box-shadow: 0 8px 6px 0 rgba(50, 50, 50, 0.7);
+  -moz-box-shadow: 0 8px 6px 0 rgba(50, 50, 50, 0.7);
+  box-shadow: 0 8px 6px 0 rgba(50, 50, 50, 0.7);
+}
+.Header h2 {
+  margin: 0;
+  font-size: 5em;
+  -webkit-animation: FadeIn 1s linear;
+  -moz-animation: FadeIn 1s linear;
+  -ms-animation: FadeIn 1s linear;
+  -o-animation: FadeIn 1s linear;
+  animation: FadeIn 1s linear;
+}
+.Header-urlEnding {
+  font-size: inherit;
+  color: #2b3e50;
+}
+.ForexTable {
+  position: absolute;
+  width: 55em;
+  top: 30%;
+  left: 50%;
+  margin-left: -27.5em;
+  -webkit-animation: DropDown 1s forwards ease-out;
+  -moz-animation: DropDown 1s forwards ease-out;
+  -ms-animation: DropDown 1s forwards ease-out;
+  -o-animation: DropDown 1s forwards ease-out;
+  animation: DropDown 1s forwards ease-out;
+}
+.ForexTable .ForexTable-Item {
+  padding: 0;
+  margin-bottom: 0.5em;
+  border: none;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-Fx p,
+.ForexTable .ForexTable-Item .ForexTable-Item-Rate p,
+.ForexTable .ForexTable-Item .ForexTable-Item-Change p {
+  padding: 0.2em 0.2em;
+  font-size: 2em;
+  margin: 0;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-Input {
+  height: 5.5em;
+  padding: 0;
+  margin-left: 7em;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-Input input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  font-size: 4em;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+  color: #df691a;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-Input input:focus {
+  outline: none;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-Fx {
+  width: 7em;
+  padding: 1em;
+  background-color: #df691a;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-Change {
+  width: 14em;
+  padding: 1em;
+  background-color: #19242f;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-Rate {
+  padding: 1em;
+  margin-right: 9em;
+  margin-left: 7em;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-More {
+  padding: 1.5em;
+  background-color: #df691a;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-More span {
+  font-size: 2em;
+  color: #fff;
+}
+.ForexTable .ForexTable-Item .ForexTable-Item-More:hover {
+  cursor: pointer;
+  background-color: #c45c17;
+}
+.ForexTable-Controls {
+  position: absolute;
+  width: 40em;
+  margin-left: -20em;
+  top: 20%;
+  left: 50%;
+  opacity: 0;
+  border: 0.1em solid rgba(105, 105, 105, 0.6);
+  -webkit-animation: Fromleft 1s 0.3s forwards ease-out;
+  -moz-animation: Fromleft 1s 0.3s forwards ease-out;
+  -ms-animation: Fromleft 1s 0.3s forwards ease-out;
+  -o-animation: Fromleft 1s 0.3s forwards ease-out;
+  animation: Fromleft 1s 0.3s forwards ease-out;
+}
+.Controls-Button {
+  background: none;
+  width: 13.22em;
+  display: inline !important;
+  margin: 0 !important;
+  padding: 1em 1em !important;
+  border: none;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.Controls-Button:hover,
+.Controls-Button:active,
+.Controls-Button .active,
+.Controls-Button:focus {
+  background: none !important;
+}
+.ForexTable-Controls-Selected {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 20em;
+  height: 5.1em;
+  background-color: rgba(105, 105, 105, 0.3);
+  -webkit-transition: all 0.3s ease-out;
+}
+.Up {
+  color: #5cb85c;
+}
+.Down {
+  color: #d9534f;
+}
+.ForexTable-Item-Animate {
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+@-webkit-keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes DropDown {
+  from {
+    -webkit-transform: translate3d(0, -90em, 0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes Fromleft {
+  from {
+    -webkit-transform: translate3d(-80em, 0, 0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
