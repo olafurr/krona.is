@@ -8,16 +8,16 @@ html(ng-app='fxApp')
 		//- meta (name="HandheldFriendly" content="true")
 	body(ng-controller='MainViewCtrl')
 		script(type='text/javascript')
-    		ad_idzone = "1111200";
-      		ad_width = "468";
-      		ad_height = "60";
-    	script(type='text/javascript', src='https://ads.exoclick.com/ads.js')
-    	noscript
-      		a(href='http://main.exoclick.com/img-click.php?idzone=1111200', target='_blank')
-        		img(src='https://syndication.exoclick.com/ads-iframe-display.php?idzone=1111200&output=img&type=468x60', width='468', height='60')
+			ad_idzone = "1111200";
+			ad_width = "468";
+			ad_height = "60";
+		script(type='text/javascript', src='https://ads.exoclick.com/ads.js')
+		noscript
+			a(href='http://main.exoclick.com/img-click.php?idzone=1111200', target='_blank')
+				img(src='https://syndication.exoclick.com/ads-iframe-display.php?idzone=1111200&output=img&type=468x60', width='468', height='60')
 		.Header.col-md-12
 			h2.text-center
-				|	Króna
+				|   Króna
 				span.Header-urlEnding
 					| .is
 		.ForexTable-Controls
@@ -50,10 +50,10 @@ html(ng-app='fxApp')
 				.ForexTable-Item-More.text-center
 					span(ng-if="!allData")
 						i.fa.fa-plus.fa-lg
-						|	Sýna fleiri
+						|   Sýna fleiri
 					span(ng-if="allData")
 						i.fa.fa-minus.fa-lg
-						|	Sýna færri
+						|   Sýna færri
 
 
 
